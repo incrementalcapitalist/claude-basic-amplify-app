@@ -6,20 +6,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Amplify } from 'aws-amplify';
-import { generateClient } from 'aws-amplify/api';
 import App from './App';
 import './index.css';
 
-// No need to import a configuration file
-Amplify.configure({
-  // Configuration is automatically injected during the build process
-});
+// Configure Amplify
+// In Gen 2, configuration is automatically injected during the build process
+Amplify.configure({}); // No need to import a configuration file
 
-// Generate an API client for use in the application
-const client = generateClient();
+// Remove the client generation if it's not being used
+// const client = generateClient();
+
+// Get the root element to render our React app
+const rootElement = document.getElementById('root');
+
+// Ensure the root element exists
+if (!rootElement) {
+  throw new Error('Root element not found');
+}
+
+// Create a root for concurrent rendering
+const root = ReactDOM.createRoot(rootElement);
 
 // Render the React application
-ReactDOM.createRoot(document.getElementById('root')!).render(
+root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
