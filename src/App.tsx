@@ -3,7 +3,7 @@
  * Main component for the Amplify-authenticated React application.
  */
 
-import React from 'react';
+import React from 'react'; // Import React for TypeScript type checking and potential hook usage
 import { Authenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 

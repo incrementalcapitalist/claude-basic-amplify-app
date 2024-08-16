@@ -3,7 +3,7 @@
  * Entry point for the React application with AWS Amplify Gen 2 configuration.
  */
 
-import React from 'react';
+import React from 'react'; // Keep this for type definitions and explicit React usage
 import ReactDOM from 'react-dom/client';
 import { Amplify } from 'aws-amplify';
 import App from './App';
